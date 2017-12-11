@@ -77,6 +77,7 @@
                                           <form action="">
                                             <div class="row">
                                                 <div class="col s12">
+                                                  <h2>asdsdad</h2>
                                                     <iframe src = "<?php echo site_url('/ViewerJS/#../uploads/') .$item['SchoolWorksFile']?>" width='100%' height='500' allowfullscreen webkitallowfullscreen></iframe>
                                                     
                                                 </div>
