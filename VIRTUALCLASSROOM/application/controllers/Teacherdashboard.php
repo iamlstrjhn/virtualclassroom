@@ -12,7 +12,6 @@ class Teacherdashboard extends CI_Controller
 	}
 
 	public function index () {
-		echo "TANGINAMO";
 		if ($this->session->userdata('session')) {
 			$data['addstud'] = $this->Subject_model->get_student();
 			$this->load->view('dashboard_teacher/header');
