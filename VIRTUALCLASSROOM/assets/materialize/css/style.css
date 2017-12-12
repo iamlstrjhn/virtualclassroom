@@ -192,6 +192,17 @@ li a.remove {
 	color: #ad1457;
 }
 
+.modal-iframe-content {
+	max-height: 700px;
+}
+
+
+.modal-iframe {
+	padding: 0!important;/*
+	height: 700px!important;*/
+
+}
+
  /*This is for the table for students*/
 
  .table-for-students {

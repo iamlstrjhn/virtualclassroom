@@ -71,18 +71,9 @@
                                   <li><a href="#!" class="remove"><i class="material-icons">delete</i>REMOVE</a></li>
                                 </ul>
                                 <!-- this is for the modal part -->
-                                   <div id="modalview" class="modal">
-                                      <div class="modal-content modal-add-schedules">
-
-                                          <form action="">
-                                            <div class="row">
-                                                <div class="col s12">
-                                                  <h2>asdsdad</h2>
-                                                    <iframe src = "<?php echo site_url('/ViewerJS/#../uploads/') .$item['SchoolWorksFile']?>" width='100%' height='500' allowfullscreen webkitallowfullscreen></iframe>
-                                                    
-                                                </div>
-                                              </div>
-                                          </form>
+                                   <div id="modalview" class="modal modal-iframe-content">
+                                      <div class="modal-content modal-iframe">
+                                          <iframe src = "<?php echo site_url('/ViewerJS/#../uploads/') .$item['SchoolWorksFile']?>" width='100%' height='100%' allowfullscreen webkitallowfullscreen></iframe>
                                           
                                       </div>
                                       
