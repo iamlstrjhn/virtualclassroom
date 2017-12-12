@@ -73,8 +73,7 @@
                                 <!-- this is for the modal part -->
                                    <div id="modalview" class="modal modal-iframe-content">
                                       <div class="modal-content modal-iframe">
-                                          <iframe src = "<?php echo site_url('/ViewerJS/#../uploads/') .$item['SchoolWorksFile']?>" width='100%' height='100%' allowfullscreen webkitallowfullscreen></iframe>
-                                          
+                                          <iframe src = "<?php echo site_url('/ViewerJS/#../uploads/') .$item['SchoolWorksFile']?>" width='100%' height='500' allowfullscreen webkitallowfullscreen></iframe>
                                       </div>
                                       
                                   </div>

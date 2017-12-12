@@ -78,36 +78,21 @@
           });
 
           var resultCache = {
-           
+           <?php foreach ($addstud as $addstudent) { ?>
 
               'L': [
                   {
-                      id: '1',
-                      text: 'Lester John Pulanco'
-                  }
-              ],
-
-              'V': [
-                  {
-                      id: '2',
-                      text: 'Vigil Muriel Boniol'
-                  }
-              ],
-              'F': [
-                  {
-                      id: '3',
-                      text: 'Francis Ape'
-                  }
-              ],
-              'K': [
-                  {
-                      id: '4',
-                      text: 'Ken Evangelista'
+                      id: '<?php echo $addstudent['StudentID'] ?>',
+                      text: '<?php echo $addstudent['Firstname'] ?> <?php echo $addstudent['Lastname'] ?>'
                   }
               ]
+
+              
           };
 
           multiple.resultCache = resultCache;
+
+          <?php } ?>
       });
         
       </script>

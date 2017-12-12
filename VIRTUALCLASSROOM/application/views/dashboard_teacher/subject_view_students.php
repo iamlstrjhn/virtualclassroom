@@ -20,7 +20,7 @@
                           <div class="autocomplete" id="multiple">
                               <div class="ac-users"></div>
                               <div class="ac-input">
-                                  <input type="text" id="multipleInput" placeholder="Please input some letters" data-activates="multipleDropdown" data-beloworigin="true" autocomplete="off">
+                                  <input type="text" id="multipleInput" placeholder="Please input the name of the student" data-activates="multipleDropdown" data-beloworigin="true" autocomplete="off">
                               </div>
                               <ul id="multipleDropdown" class="dropdown-content ac-dropdown"></ul>
                               <input type="hidden" name="multipleHidden" />
