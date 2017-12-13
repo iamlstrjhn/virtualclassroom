@@ -5,8 +5,7 @@
 
       </div>
     </div>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
       <script type="text/javascript" src="/assets/materialize/js/materialize.min.js"></script>
@@ -64,71 +63,37 @@
           );
 
       /*jquery for search and add students*/
-          
-          $( function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    function split( val ) {
-      return val.split( /,\s*/ );
-    }
-    function extractLast( term ) {
-      return split( term ).pop();
-    }
- 
-    $( "#tags" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableTags, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
+       $(function () {
+
+          var multiple = $('#multipleInput').materialize_autocomplete({
+              multiple: {
+                  enable: true
+              },
+              appender: {
+                  el: '.ac-users'
+              },
+              dropdown: {
+                  el: '#multipleDropdown'
+              }
+          });
+
+          var resultCache = {
+           <?php foreach ($addstud as $addstudent) { ?>
+
+              'L': [
+                  {
+                      id: '<?php echo $addstudent['StudentID'] ?>',
+                      text: '<?php echo $addstudent['Firstname'] ?> <?php echo $addstudent['Lastname'] ?>'
+                  }
+              ]
+
+              
+          };
+
+          multiple.resultCache = resultCache;
+
+          <?php } ?>
       });
-  } );
         
       </script>
     </body>
