@@ -64,7 +64,7 @@
                         <div class="col s12 l6">
                           <div class="card-works">
                             <a class="black-text h6-for-schoolworks" href="<?php echo site_url('/uploads/') .$item['SchoolWorksFile']?>" target="_blank"><?php echo $item['SchoolWorksFile'] ?></a>
-                             <a class="btn right btn-details pink lighten-1 dropdown-button" href="#" data-beloworigin="true" data-activates="dropdown1"><i class="material-icons material-details">details</i></a>
+                             <a class="btn right btn-details pink lighten-1 dropdown-button" href="#" data-beloworigin="true" data-activates="dropdown1"><i class="material-icons material-details">more_horiz</i></a>
                                <ul id='dropdown1' class='dropdown-content'>
                                   <li><a href="#modalview" class="modal-trigger"><i class="material-icons">open_in_new</i>VIEW</a></li>
                                   <li><a href="#!"><i class="material-icons">edit</i>EDIT</a></li>
@@ -75,7 +75,6 @@
                                       <div class="modal-content modal-iframe">
                                           <iframe src = "<?php echo site_url('/ViewerJS/#../uploads/') .$item['SchoolWorksFile']?>" width='100%' height='500' allowfullscreen webkitallowfullscreen></iframe>
                                       </div>
-                                      
                                   </div>
                                   <!-- end of modal part -->
                              <br>

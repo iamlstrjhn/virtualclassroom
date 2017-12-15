@@ -53,5 +53,4 @@ class Teacherschedules extends CI_Controller
 
 		}
 
-
 }

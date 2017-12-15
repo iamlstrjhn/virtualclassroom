@@ -63,36 +63,39 @@
           );
 
       /*jquery for search and add students*/
-       $(function () {
+     $(document).ready(function(){
 
-          var multiple = $('#multipleInput').materialize_autocomplete({
-              multiple: {
-                  enable: true
-              },
-              appender: {
-                  el: '.ac-users'
-              },
-              dropdown: {
-                  el: '#multipleDropdown'
-              }
-          });
+        $('.chips').material_chip();
+        $('.chips-initial').material_chip({
+          data: [
+          {
+            tag: 'L',
+          }, 
+          {
+            tag: 'M',
+          }, 
+          {
+            tag: 'C',
+          }
+          ],
+        });
+        $('.chips-placeholder').material_chip({
+          placeholder: 'Enter a tag',
+          secondaryPlaceholder: '+Tag',
+        });
+        $('.chips-autocomplete').material_chip({
+          autocompleteOptions: {
+            data: {
 
-          var resultCache = {
-           <?php foreach ($addstud as $addstudent) { ?>
-
-              'L': [
-                  {
-                      id: '<?php echo $addstudent['StudentID'] ?>',
-                      text: '<?php echo $addstudent['Firstname'] ?> <?php echo $addstudent['Lastname'] ?>'
-                  }
-              ]
-
-              
-          };
-
-          multiple.resultCache = resultCache;
-
-          <?php } ?>
+              'Apple': null,
+              'Microsoft': null,
+              'Google': null
+            },
+            limit: Infinity,
+            minLength: 1
+          }
+        });
+       
       });
         
       </script>

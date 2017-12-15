@@ -17,14 +17,9 @@
                     <div id="modal1" class="modal">
                         <div class="modal-content modal-add-student">
                          <h5>Add a student</h5>
-                          <div class="autocomplete" id="multiple">
-                              <div class="ac-users"></div>
-                              <div class="ac-input">
-                                  <input type="text" id="multipleInput" placeholder="Please input the name of the student" data-activates="multipleDropdown" data-beloworigin="true" autocomplete="off">
-                              </div>
-                              <ul id="multipleDropdown" class="dropdown-content ac-dropdown"></ul>
-                              <input type="hidden" name="multipleHidden" />
-                          </div>
+                            <form method=GET>
+                             <div id="chips_ahoy" class="chips chips-autocomplete"></div>
+                             </form>
                           <br>
                           <button class="waves-effect btn cyan btn-username right" type="submit" value="submit">SUBMIT </button>
                         </div>
