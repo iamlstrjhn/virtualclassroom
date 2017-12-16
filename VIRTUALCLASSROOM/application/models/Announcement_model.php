@@ -24,13 +24,12 @@ class Announcement_model extends CI_Model
 
 	$this->db->insert('table_announcements',$data);
 
-
 	}
 
-	/*public function get_facultyname($data){
-			return $this->db->join('table_announcements','table_faculty.FacultyID=table_announcements.AnnouncementUploader')
-			 ->get('table_faculty')->result_array();
-		}*/
+	public function edit_announcement($id,$data){
+		$this->db->where('AnnouncementID',$id)->update('table_announcements',$data);
+    	return true;
+	}
 
 }
 

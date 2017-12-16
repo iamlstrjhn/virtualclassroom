@@ -66,35 +66,29 @@
      $(document).ready(function(){
 
         $('.chips').material_chip();
-        $('.chips-initial').material_chip({
-          data: [
-          {
-            tag: 'L',
-          }, 
-          {
-            tag: 'M',
-          }, 
-          {
-            tag: 'C',
-          }
-          ],
-        });
-        $('.chips-placeholder').material_chip({
-          placeholder: 'Enter a tag',
-          secondaryPlaceholder: '+Tag',
-        });
         $('.chips-autocomplete').material_chip({
           autocompleteOptions: {
             data: {
+              
+              <?php foreach ($addstud as $addtstudent) { ?>
 
-              'Apple': null,
-              'Microsoft': null,
-              'Google': null
+              '<?php echo $addtstudent['Firstname'] ?> <?php echo $addtstudent['Lastname'] ?>': null,
+
+              <?php } ?>
             },
             limit: Infinity,
             minLength: 1
           }
+
         });
+
+        var chip = {
+          <?php foreach ($addstud as $addtstudent) { ?>
+          tag: '<?php echo $addtstudent['Firstname'] ?> <?php echo $addtstudent['Lastname'] ?>',
+          id: <?php echo $addtstudent['StudentID'] ?>, //optional
+
+          <?php } ?>
+        };
        
       });
         
