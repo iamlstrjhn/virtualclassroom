@@ -53,4 +53,28 @@ class Teacherschedules extends CI_Controller
 
 		}
 
+
+	public function update_announcement(){
+			$this->form_validation->set_rules('title', 'AnnouncementTitle', 'required');
+			$this->form_validation->set_rules('content', 'AnnouncementContent', 'required');
+			$this->form_validation->set_rules('sched', 'AnnouncementSched', 'required');
+
+			if($this->form_validation->run()===FALSE){
+				$this->load->model('Announcement_model');
+				$data['announcement'] = $this->Announcement_model->get_announcement();
+				redirect('Teacherschedules', $data);
+			}
+
+			else {
+				$data = array(
+					'AnnouncementTitle'=>$this->input->post('title'),
+					'AnnouncementContent'=>$this->input->post('content'),
+					'AnnouncementSched'=>$this->input->post('sched')
+				);
+				$this->Announcement_model->edit_announcement($id,$data);
+				redirect('Teacherschedules');
+			
+		}
+	}
+
 }
