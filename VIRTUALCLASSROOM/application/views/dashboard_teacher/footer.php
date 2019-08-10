@@ -63,51 +63,33 @@
           );
 
       /*jquery for search and add students*/
-       $(function () {
+     $(document).ready(function(){
 
-          var multiple = $('#multipleInput').materialize_autocomplete({
-              multiple: {
-                  enable: true
-              },
-              appender: {
-                  el: '.ac-users'
-              },
-              dropdown: {
-                  el: '#multipleDropdown'
-              }
-          });
+        $('.chips').material_chip();
+        $('.chips-autocomplete').material_chip({
+          autocompleteOptions: {
+            data: {
+              
+              <?php foreach ($addstud as $addtstudent) { ?>
 
-          var resultCache = {
-           
+              '<?php echo $addtstudent['Firstname'] ?> <?php echo $addtstudent['Lastname'] ?>': null,
 
-              'L': [
-                  {
-                      id: '1',
-                      text: 'Lester John Pulanco'
-                  }
-              ],
+              <?php } ?>
+            },
+            limit: Infinity,
+            minLength: 1
+          }
 
-              'V': [
-                  {
-                      id: '2',
-                      text: 'Vigil Muriel Boniol'
-                  }
-              ],
-              'F': [
-                  {
-                      id: '3',
-                      text: 'Francis Ape'
-                  }
-              ],
-              'K': [
-                  {
-                      id: '4',
-                      text: 'Ken Evangelista'
-                  }
-              ]
-          };
+        });
 
-          multiple.resultCache = resultCache;
+        var chip = {
+          <?php foreach ($addstud as $addtstudent) { ?>
+          tag: '<?php echo $addtstudent['Firstname'] ?> <?php echo $addtstudent['Lastname'] ?>',
+          id: <?php echo $addtstudent['StudentID'] ?>, //optional
+
+          <?php } ?>
+        };
+       
       });
         
       </script>

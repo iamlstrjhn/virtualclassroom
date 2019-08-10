@@ -57,7 +57,52 @@
                               
                               <div class="col s12 l6">
                                  <div class="card-schedule">
-                                    <h6 class="h6-schedule"><?php echo $announcements['AnnouncementTitle'] ?></h6>
+                                    <a class="h6-schedule black-text"><?php echo $announcements['AnnouncementTitle'] ?></a>
+                                    
+                                    <a class="btn right btn-details pink lighten-1 dropdown-button" href="#" data-beloworigin="true" data-activates="dropdownsched<?php echo $announcements['AnnouncementID'];?>"><i class="material-icons material-details">more_horiz</i></a>
+
+                                       <ul id='dropdownsched<?php echo $announcements['AnnouncementID'];?>' class='dropdown-content'>
+                                        <li><a href="#modaledit<?php echo $announcements['AnnouncementID'];?>" class="modal-trigger"><i class="material-icons">edit</i>EDIT</a></li>
+                                        <li><a href="#!" class="remove"><i class="material-icons">delete</i>REMOVE</a></li>
+                                      </ul>
+
+                                      <!-- modal part -->
+                                      <div id="modaledit<?php echo $announcements['AnnouncementID'];?>" class="modal">
+                                          <div class="modal-content modal-add-schedules">
+                                                <h5>Edit the schedule</h5>
+
+                                                <form action="Teacherschedules/update_announcement" method=POST>
+                                                <input type="hidden" name='id' value="<?php echo $announcements['AnnouncementID'];?>">
+                                                  <div class="row">
+                                                      <div class="col s12">
+                                                          <div class="input-field">
+                                                            <input type="text" class="validate" name="title" value="<?php echo $announcements['AnnouncementTitle'] ?>">
+                                                            <label>Title</label>
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="col s12">
+                                                          <div class="input-field">
+                                                            <input type="text" class="validate" name="content" value="<?php echo $announcements['AnnouncementContent'] ?>">
+                                                            <label>Content</label>
+                                                          </div>
+                                                      </div>
+
+                                                     <div class="col s12">
+                                                          <div class="input-field">
+                                                            <input type="text" class="datepicker" name="sched" value="<?php echo $announcements['AnnouncementSched'] ?>">
+                                                            <label>Date</label>
+                                                          </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <button class="waves-effect btn cyan btn-username right" type="submit" value="submit">SUBMIT </button>
+                                                </form>
+                                                
+                                            </div>
+                                      </div>
+                                      <!-- end of modal for edit -->
+
                                     <p><b class="sched-bold-text"><?php echo $announcements['Firstname']." ".$announcements['Lastname'] ?></b>&ensp;<i><?php echo $announcements['AnnouncementSched'] ?></i></p>
                                     <p><?php echo $announcements['AnnouncementContent'] ?></p>
                                   </div>

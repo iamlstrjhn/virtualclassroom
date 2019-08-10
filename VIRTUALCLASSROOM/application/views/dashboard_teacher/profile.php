@@ -21,8 +21,8 @@
                                   <img class="responsive-img" src="images/lj.jpg">
                                 </div>
                                 <div class="col l11 name-user">
-                                  <h5><b>LESTER JOHN MACABULOS PULANCO</b></h5>
-                                  <p>STUDENT</p>
+                                  <h5><b>This is a name</b></h5>
+                                  <p>PROFESSOR</p>
                                 </div>
                             </div>
                                 <center>

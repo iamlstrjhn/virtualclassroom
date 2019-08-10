@@ -42,13 +42,14 @@
 						->join('table_faculty_load','table_student_load.FacultyLoadID=table_faculty_load.FacultyLoadID')
 						->join('table_subjects','table_faculty_load.SubjectsID=table_subjects.SubjectsID')
 						->join('table_faculty','table_faculty_load.FacultyID=table_faculty.FacultyID')
+
 			 			->get('table_student_load')->result_array();
 		}
 
 	public function get_student(){
 
 		/*$data = array('' => , );*/
-		return $this->db->get('table_student')->result_array();
+		return $this->db->order_by('Lastname','ASC')->get('table_student')->result_array();
 	}
 		
 

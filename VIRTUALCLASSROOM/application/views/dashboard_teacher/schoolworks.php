@@ -64,28 +64,17 @@
                         <div class="col s12 l6">
                           <div class="card-works">
                             <a class="black-text h6-for-schoolworks" href="<?php echo site_url('/uploads/') .$item['SchoolWorksFile']?>" target="_blank"><?php echo $item['SchoolWorksFile'] ?></a>
-                             <a class="btn right btn-details pink lighten-1 dropdown-button" href="#" data-beloworigin="true" data-activates="dropdown1"><i class="material-icons material-details">details</i></a>
+                             <a class="btn right btn-details pink lighten-1 dropdown-button" href="#" data-beloworigin="true" data-activates="dropdown1"><i class="material-icons material-details">more_horiz</i></a>
                                <ul id='dropdown1' class='dropdown-content'>
                                   <li><a href="#modalview" class="modal-trigger"><i class="material-icons">open_in_new</i>VIEW</a></li>
                                   <li><a href="#!"><i class="material-icons">edit</i>EDIT</a></li>
                                   <li><a href="#!" class="remove"><i class="material-icons">delete</i>REMOVE</a></li>
                                 </ul>
                                 <!-- this is for the modal part -->
-                                   <div id="modalview" class="modal">
-                                      <div class="modal-content modal-add-schedules">
-
-                                          <form action="">
-                                            <div class="row">
-                                                <div class="col s12">
-                                                  <h2>asdsdad</h2>
-                                                    <iframe src = "<?php echo site_url('/ViewerJS/#../uploads/') .$item['SchoolWorksFile']?>" width='100%' height='500' allowfullscreen webkitallowfullscreen></iframe>
-                                                    
-                                                </div>
-                                              </div>
-                                          </form>
-                                          
+                                   <div id="modalview" class="modal modal-iframe-content">
+                                      <div class="modal-content modal-iframe">
+                                          <iframe src = "<?php echo site_url('/ViewerJS/#../uploads/') .$item['SchoolWorksFile']?>" width='100%' height='500' allowfullscreen webkitallowfullscreen></iframe>
                                       </div>
-                                      
                                   </div>
                                   <!-- end of modal part -->
                              <br>
